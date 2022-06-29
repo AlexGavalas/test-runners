@@ -1,0 +1,3 @@
+{
+    "spec_files": ["./tests/jasmine.ts"]
+}
