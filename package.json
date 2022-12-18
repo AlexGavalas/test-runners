@@ -11,7 +11,7 @@
         "build": "tsc && vite build",
         "preview": "vite preview",
         "ava": "ava ./tests/ava.tsx",
-        "uvu": "uvu -r tsm uvu/",
+        "uvu": "node  --no-warnings --loader tsm ./tests/uvu.tsx --tsmconfig tsm.config.js",
         "mocha": "mocha ./tests/mocha.ts",
         "jasmine": "NODE_OPTIONS=--loader=ts-node/esm jasmine --config=jasmine.json",
         "jest": "jest -- ./tests/jest.spec.ts",
