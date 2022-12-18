@@ -12,7 +12,7 @@
         "preview": "vite preview",
         "ava": "ava ./tests/ava.tsx",
         "uvu": "node  --no-warnings --loader tsm ./tests/uvu.tsx --tsmconfig tsm.config.js",
-        "mocha": "mocha ./tests/mocha.ts",
+        "mocha": "mocha ./tests/mocha.tsx",
         "jasmine": "NODE_OPTIONS=--loader=ts-node/esm jasmine --config=jasmine.json",
         "jest": "jest -- ./tests/jest.spec.ts",
         "vitest": "vitest run 'vitest'",
@@ -49,16 +49,5 @@
         "uvu": "0.5.6",
         "vite": "4.0.1",
         "vitest": "0.25.8"
-    },
-    "ava": {
-        "extensions": {
-            "ts": "module",
-            "tsx": "module"
-        },
-        "nodeArguments": [
-            "--no-warnings",
-            "--loader=ts-node/esm",
-            "--experimental-specifier-resolution=node"
-        ]
     }
 }
