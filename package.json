@@ -16,7 +16,7 @@
         "jasmine": "NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm --experimental-specifier-resolution=node\" jasmine --config=jasmine.json",
         "jest": "jest -- ./tests/jest.spec.tsx",
         "vitest": "vitest run ./tests/vitest.spec.tsx",
-        "node:test": "node --loader ts-node/esm ./tests/pure-node.ts"
+        "node:test": "node --no-warnings --loader=ts-node/esm --experimental-specifier-resolution=node ./tests/node.spec.tsx"
     },
     "dependencies": {
         "react": "18.2.0",
