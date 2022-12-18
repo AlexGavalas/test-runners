@@ -13,7 +13,7 @@
         "ava": "ava ./tests/ava.tsx",
         "uvu": "node  --no-warnings --loader tsm ./tests/uvu.tsx --tsmconfig tsm.config.js",
         "mocha": "mocha ./tests/mocha.tsx",
-        "jasmine": "NODE_OPTIONS=--loader=ts-node/esm jasmine --config=jasmine.json",
+        "jasmine": "NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm --experimental-specifier-resolution=node\" jasmine --config=jasmine.json",
         "jest": "jest -- ./tests/jest.spec.ts",
         "vitest": "vitest run 'vitest'",
         "node:test": "node --loader ts-node/esm ./tests/pure-node.ts"
