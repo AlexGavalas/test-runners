@@ -1,17 +1,21 @@
-import test from 'node:test';
+import { test } from 'node:test';
 import 'global-jsdom/register';
-import { render, screen } from '@testing-library/react';
+import { cleanup, render, screen } from '@testing-library/react';
 import { App } from '../src/app';
 import assert from 'node:assert';
+import { testRuns } from '../config';
 
 const sum = (a: number, b: number) => a + b;
 
-test('sum', () => {
-    assert.equal(sum(1, 2), 3);
-});
+for (let i = 0; i < testRuns; i++) {
+    test(`sum ${i}`, () => {
+        assert.equal(sum(1, 2), 3);
+    });
 
-test('<App />', () => {
-    render(<App />);
-    const button = screen.getByRole('button');
-    assert.equal(button.textContent, 'Count is: 0');
-});
+    test(`<App /> ${i}`, () => {
+        render(<App />);
+        const button = screen.getByRole('button');
+        assert.equal(button.textContent, 'Count is: 0');
+        cleanup();
+    });
+}
