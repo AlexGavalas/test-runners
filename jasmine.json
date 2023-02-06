@@ -1,4 +1,5 @@
 {
     "spec_files": ["./tests/jasmine.tsx"],
+    "helpers": ["./helpers/jasmine.ts"],
     "random": false
 }
