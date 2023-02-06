@@ -10,6 +10,7 @@
         "dev": "vite",
         "build": "tsc && vite build",
         "preview": "vite preview",
+        "test": "yarn ava && yarn uvu && yarn mocha && yarn jasmine && yarn jest && yarn vitest && yarn node:test && yarn xv && yarn unexpected",
         "ava": "ava ./tests/ava.tsx",
         "uvu": "node --no-warnings --loader=tsm -r global-jsdom/register ./tests/uvu.tsx",
         "mocha": "mocha ./tests/mocha.tsx",
