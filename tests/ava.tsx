@@ -1,10 +1,9 @@
-import 'global-jsdom/register';
 import { cleanup, render, screen } from '@testing-library/react';
 import test from 'ava';
+
 import { App } from '../src/app';
 import { TEST_RUNS } from '../config';
-
-const sum = (a: number, b: number) => a + b;
+import { sum } from '../src/util';
 
 for (let i = 0; i < TEST_RUNS; i++) {
     test.afterEach(cleanup);
