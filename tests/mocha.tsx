@@ -1,4 +1,3 @@
-import 'global-jsdom/register';
 import { render, screen } from '@testing-library/react';
 import { App } from '../src/app';
 import assert from 'node:assert';

@@ -1,4 +1,5 @@
 {
+    "require": ["global-jsdom/register"],
     "no-warnings": 1,
     "loader": "ts-node/esm",
     "experimental-specifier-resolution": "node"
