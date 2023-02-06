@@ -5,7 +5,7 @@ const config: Config = {
 
     preset: 'ts-jest',
 
-    setupFilesAfterEnv: ['<rootDir>/src/setup-tests.ts'],
+    setupFilesAfterEnv: ['<rootDir>/helpers/msw.ts'],
 };
 
 export default config;

@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import { App } from '../src/app';
-import { TEST_RUNS } from '../config';
 
-const sum = (a: number, b: number) => a + b;
+import { App } from '../src/app';
+import { sum } from '../src/util';
+import { TEST_RUNS } from '../config';
 
 for (let i = 0; i < TEST_RUNS; i++) {
     it(`sum ${i}`, () => {
