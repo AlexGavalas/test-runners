@@ -1,3 +1,4 @@
+/** @type {import('tsm/config').Config} */
 const config = {
     '.tsx': {
         banner: 'import React from "react";',

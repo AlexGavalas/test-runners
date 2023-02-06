@@ -10,7 +10,7 @@
         "dev": "vite",
         "build": "tsc && vite build",
         "preview": "vite preview",
-        "test": "yarn ava && yarn uvu && yarn mocha && yarn jasmine && yarn jest && yarn vitest && yarn node:test && yarn xv && yarn unexpected && yarn tape && yarn tap",
+        "test": "yarn ava && yarn uvu && yarn mocha && yarn jasmine && yarn jest && yarn vitest && yarn node:test && yarn xv && yarn unexpected && yarn tape && yarn tap && yarn japa",
         "ava": "ava ./tests/ava.tsx",
         "uvu": "node --no-warnings --loader=tsm -r global-jsdom/register ./tests/uvu.tsx",
         "mocha": "mocha ./tests/mocha.tsx",
@@ -21,13 +21,17 @@
         "xv": "xv --no-warnings --loader=tsm --require=global-jsdom/register ./tests/xv.tsx",
         "unexpected": "mocha ./tests/unexpected.tsx",
         "tape": "node --no-warnings --loader=tsm -r global-jsdom/register ./tests/tape.tsx",
-        "tap": "node --no-warnings --loader=tsm -r global-jsdom/register ./tests/tap.tsx"
+        "tap": "node --no-warnings --loader=tsm -r global-jsdom/register ./tests/tap.tsx",
+        "japa": "node --no-warnings --loader=tsm -r global-jsdom/register ./japa.ts"
     },
     "dependencies": {
         "react": "18.2.0",
         "react-dom": "18.2.0"
     },
     "devDependencies": {
+        "@japa/expect": "2.0.1",
+        "@japa/runner": "2.2.2",
+        "@japa/spec-reporter": "1.3.2",
         "@testing-library/react": "13.4.0",
         "@types/jasmine": "4.3.1",
         "@types/jest": "29.4.0",
