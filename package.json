@@ -10,7 +10,7 @@
         "dev": "vite",
         "build": "tsc && vite build",
         "preview": "vite preview",
-        "test": "yarn ava && yarn uvu && yarn mocha && yarn jasmine && yarn jest && yarn vitest && yarn node:test && yarn xv && yarn unexpected",
+        "test": "yarn ava && yarn uvu && yarn mocha && yarn jasmine && yarn jest && yarn vitest && yarn node:test && yarn xv && yarn unexpected && yarn tape",
         "ava": "ava ./tests/ava.tsx",
         "uvu": "node --no-warnings --loader=tsm -r global-jsdom/register ./tests/uvu.tsx",
         "mocha": "mocha ./tests/mocha.tsx",
@@ -19,7 +19,8 @@
         "vitest": "vitest run ./tests/vitest.spec.tsx",
         "node:test": "node --no-warnings --loader=tsm -r global-jsdom/register ./tests/node.spec.tsx",
         "xv": "xv --no-warnings --loader=tsm --require=global-jsdom/register ./tests/xv.tsx",
-        "unexpected": "mocha ./tests/unexpected.tsx"
+        "unexpected": "mocha ./tests/unexpected.tsx",
+        "tape": "node --no-warnings --loader=tsm -r global-jsdom/register ./tests/tape.tsx"
     },
     "dependencies": {
         "react": "18.2.0",
@@ -33,6 +34,7 @@
         "@types/node": "18.11.19",
         "@types/react": "18.0.27",
         "@types/react-dom": "18.0.10",
+        "@types/tape": "4.13.2",
         "@vitejs/plugin-react": "3.1.0",
         "@vitest/coverage-c8": "0.28.4",
         "ava": "5.2.0",
@@ -45,6 +47,7 @@
         "jsdom": "21.1.0",
         "mocha": "10.2.0",
         "msw": "1.0.0",
+        "tape": "5.6.3",
         "ts-jest": "29.0.5",
         "ts-node": "10.9.1",
         "tsm": "2.3.0",
