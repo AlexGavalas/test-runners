@@ -1,1 +1,1 @@
-export const testRuns = 100;
+export const TEST_RUNS = 100;
