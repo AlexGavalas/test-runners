@@ -16,7 +16,7 @@
         "jasmine": "NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm --experimental-specifier-resolution=node\" jasmine --config=jasmine.json",
         "jest": "jest -- ./tests/jest.spec.tsx",
         "vitest": "vitest run ./tests/vitest.spec.tsx",
-        "node:test": "node --no-warnings --loader=ts-node/esm --experimental-specifier-resolution=node ./tests/node.spec.tsx",
+        "node:test": "node --no-warnings --loader=ts-node/esm --experimental-specifier-resolution=node -r global-jsdom/register ./tests/node.spec.tsx",
         "xv": "xv --no-warnings --loader=ts-node/esm --experimental-specifier-resolution=node ./tests/xv.tsx"
     },
     "dependencies": {

@@ -1,11 +1,10 @@
 import { test, afterEach } from 'node:test';
-import 'global-jsdom/register';
-import { cleanup, render, screen } from '@testing-library/react';
-import { App } from '../src/app';
 import assert from 'node:assert';
-import { TEST_RUNS } from '../config';
+import { cleanup, render, screen } from '@testing-library/react';
 
-const sum = (a: number, b: number) => a + b;
+import { App } from '../src/app';
+import { sum } from '../src/util';
+import { TEST_RUNS } from '../config';
 
 for (let i = 0; i < TEST_RUNS; i++) {
     afterEach(cleanup);
