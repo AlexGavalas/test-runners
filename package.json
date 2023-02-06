@@ -17,7 +17,7 @@
         "jest": "jest -- ./tests/jest.spec.tsx",
         "vitest": "vitest run ./tests/vitest.spec.tsx",
         "node:test": "node --no-warnings --loader=ts-node/esm --experimental-specifier-resolution=node -r global-jsdom/register ./tests/node.spec.tsx",
-        "xv": "xv --no-warnings --loader=ts-node/esm --experimental-specifier-resolution=node ./tests/xv.tsx"
+        "xv": "xv --no-warnings --loader=ts-node/esm --experimental-specifier-resolution=node --require=global-jsdom/register ./tests/xv.tsx"
     },
     "dependencies": {
         "react": "18.2.0",
