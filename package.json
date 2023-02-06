@@ -11,14 +11,14 @@
         "build": "tsc && vite build",
         "preview": "vite preview",
         "ava": "ava ./tests/ava.tsx",
-        "uvu": "node --no-warnings --loader tsm -r global-jsdom/register ./tests/uvu.tsx --tsmconfig tsm.config.js",
-        "mocha": "mocha --tsmconfig tsm.config.js ./tests/mocha.tsx",
+        "uvu": "node --no-warnings --loader tsm -r global-jsdom/register ./tests/uvu.tsx",
+        "mocha": "mocha ./tests/mocha.tsx",
         "jasmine": "NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm --experimental-specifier-resolution=node\" jasmine --config=jasmine.json",
         "jest": "jest -- ./tests/jest.spec.tsx",
         "vitest": "vitest run ./tests/vitest.spec.tsx",
         "node:test": "node --no-warnings --loader=ts-node/esm --experimental-specifier-resolution=node -r global-jsdom/register ./tests/node.spec.tsx",
         "xv": "xv --no-warnings --loader=ts-node/esm --experimental-specifier-resolution=node --require=global-jsdom/register ./tests/xv.tsx",
-        "unexpected": "mocha --tsmconfig tsm.config.js ./tests/unexpected.tsx"
+        "unexpected": "mocha ./tests/unexpected.tsx"
     },
     "dependencies": {
         "react": "18.2.0",
