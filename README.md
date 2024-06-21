@@ -19,7 +19,7 @@ This is a playground to check out various testing libraries. The following are s
 
 Some helper libraries present are:
 
--   [tsm](https://github.com/lukeed/tsm): A Typescript Module Loader.
+-   [tsx](https://github.com/privatenumber/tsx): A Typescript Module Loader.
 -   [ts-node](https://github.com/TypeStrong/ts-node): A Typescript execution engine for Node.
 -   [@testing-library/react](https://github.com/testing-library/react-testing-library): A library to test React components.
 -   [jsdom](https://github.com/jsdom/jsdom): A Javascript implementation of various web standards.

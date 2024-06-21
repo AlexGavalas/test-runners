@@ -1,6 +1,5 @@
 {
     "require": ["global-jsdom/register"],
     "no-warnings": 1,
-    "loader": "tsm",
-    "experimental-specifier-resolution": "node"
+    "import": "tsx"
 }
