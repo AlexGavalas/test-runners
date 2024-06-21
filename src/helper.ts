@@ -1,1 +1,1 @@
-export const anotherSum = (a: number, b: number) => a + b;
+export const doNothing = (_a: unknown) => 0;

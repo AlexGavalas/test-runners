@@ -7,77 +7,82 @@ import { prettyDOM } from '@testing-library/dom';
 
 import { App } from '../src/app';
 
+snapshot.setResolveSnapshotPath(generateSnapshotPath);
+
 snapshot.setDefaultSnapshotSerializers([
     (source: unknown) => {
         if (source instanceof HTMLElement) {
+            // If the source is a result from `render`, we can use prettyDOM to serialize it
             return prettyDOM(source, undefined, { highlight: false });
         }
 
-        return JSON.stringify(source);
+        // Otherwise, we can serialize it as JSON
+        // This has some limitations, like not being able to serialize functions
+        // On a more production ready setup, you might want to use a more robust serializer
+        return JSON.stringify(source, null, 2);
     },
 ]);
 
-snapshot.setResolveSnapshotPath(generateSnapshotPath);
-
-function generateSnapshotPath(testFilePath: string) {
-    const ext = extname(testFilePath);
-    const filename = basename(testFilePath, ext);
-    const base = dirname(testFilePath);
-    return join(base, `__snapshots__/${filename}.snap.js`);
-}
-
-describe.skip('sum inner', () => {
-    let anotherSum = mock.fn(() => 2);
+describe('module mocks', () => {
+    const doNothing = mock.fn(() => 2);
 
     before(() => {
         // @ts-expect-error
         mock.module('../src/helper', {
             namedExports: {
-                anotherSum,
+                doNothing,
             },
         });
     });
 
     afterEach(() => {
-        anotherSum.mock.resetCalls();
+        doNothing.mock.resetCalls();
     });
 
-    it('adds 1 + 2 to equal 3', async () => {
-        anotherSum.mock.mockImplementationOnce(() => 0);
-        anotherSum.mock.mockImplementation(() => 1);
+    it('uses the mocked function', async () => {
+        // We can mock the first call to return 0 and the rest calls to return 1
+        doNothing.mock.mockImplementationOnce(() => 0);
+        doNothing.mock.mockImplementation(() => 1);
 
         const { sum } = await import('../src/util');
 
         assert.equal(sum(1, 2), 3);
         assert.equal(sum(1, 2), 4);
-        assert.equal(anotherSum.mock.callCount(), 2);
-        assert.deepEqual(anotherSum.mock.calls[0].arguments, [1, 2]);
     });
 
-    it('test 2', async () => {
+    it('can assert on the mock', async () => {
         const { sum } = await import('../src/util');
 
-        assert.equal(sum(1, 2), 5);
+        sum(1, 2);
 
-        assert.equal(anotherSum.mock.callCount(), 1);
+        assert.equal(doNothing.mock.callCount(), 1);
+        assert.deepEqual(doNothing.mock.calls[0].arguments, [1]);
     });
 });
 
 describe('<App />', () => {
-    afterEach(cleanup);
-
-    it('renders', () => {
-        render(<App />);
-        const button = screen.getByRole('button');
-        assert.equal(button.textContent, 'Count is: 0');
+    afterEach(() => {
+        cleanup();
     });
 
-    it('snapshots', (t) => {
+    it('renders', (t) => {
         const { container } = render(<App />);
 
+        const button = screen.getByRole('button');
+
+        // We can assert on the button's text content
+        assert.equal(button.textContent, 'Count is: 0');
+
         // @ts-expect-error
+        // Or take a snapshot
         t.assert.snapshot(container);
-        // @ts-expect-error
-        t.assert.snapshot({ test: 42 });
     });
 });
+
+function generateSnapshotPath(testFilePath: string) {
+    const ext = extname(testFilePath);
+    const filename = basename(testFilePath, ext);
+    const base = dirname(testFilePath);
+
+    return join(base, `__snapshots__/${filename}.snap.js`);
+}

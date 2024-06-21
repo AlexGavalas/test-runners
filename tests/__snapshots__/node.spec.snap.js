@@ -1,12 +1,8 @@
-exports[`<App /> > snapshots 1`] = `
+exports[`<App /> > renders 1`] = `
 <div>
   <button>
     Count is: 
     0
   </button>
 </div>
-`;
-
-exports[`<App /> > snapshots 2`] = `
-{"test":42}
 `;
