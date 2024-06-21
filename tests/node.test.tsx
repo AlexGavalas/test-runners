@@ -37,6 +37,7 @@ describe('module mocks', () => {
 
     afterEach(() => {
         doNothing.mock.resetCalls();
+        doNothing.mock.restore();
     });
 
     it('uses the mocked function', async () => {

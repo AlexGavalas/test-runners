@@ -17,7 +17,7 @@
         "jasmine": "NODE_OPTIONS=\"--no-warnings --import=tsx\" jasmine --config=jasmine.json",
         "jest": "jest -- ./tests/jest.spec.tsx",
         "vitest": "vitest run --coverage ./tests/vitest.spec.tsx",
-        "node:test": "node --experimental-test-coverage --experimental-test-snapshots --experimental-test-module-mocks --test-update-snapshots --no-warnings --import=tsx -r global-jsdom/register ./tests/node.spec.tsx",
+        "node:test": "node --experimental-test-coverage --experimental-test-snapshots --experimental-test-module-mocks --test-update-snapshots --no-warnings --import=tsx -r global-jsdom/register ./tests/node.test.tsx",
         "xv": "xv --no-warnings --import=tsx --require=global-jsdom/register ./tests/xv.tsx",
         "unexpected": "mocha ./tests/unexpected.tsx",
         "tape": "node --no-warnings --import=tsx -r global-jsdom/register ./tests/tape.tsx",
