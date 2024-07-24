@@ -27,7 +27,6 @@ describe('module mocks', () => {
     const doNothing = mock.fn(() => 2);
 
     before(() => {
-        // @ts-expect-error
         mock.module('../src/helper', {
             namedExports: {
                 doNothing,
