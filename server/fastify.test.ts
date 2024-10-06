@@ -1,6 +1,5 @@
 import { describe, test, expect, beforeAll, afterAll, vi } from 'vitest';
 import autocannon from 'autocannon';
-import { decodeFromCompressedBase64 } from 'hdr-histogram-js';
 import { getServer } from './fastify';
 
 describe('inject request', () => {
@@ -63,15 +62,12 @@ describe('fetch request from live server', () => {
 
     test('should have good performance', async () => {
         const results = await autocannon({ duration: 2, url: base('/') });
-        // @ts-expect-error
-        const histogram = decodeFromCompressedBase64(results.latencies);
 
         expect(results.non2xx).toBe(0);
         expect(results.errors).toBe(0);
-        expect(histogram.getValueAtPercentile(99)).toBeLessThan(50);
-        // @ts-expect-error
-        expect(results.totalCompletedRequests).toBeGreaterThan(50000);
-    }, 7000);
+        expect(results.latency.average).toBeLessThan(0.05);
+        expect(results.requests.total).toBeGreaterThan(50000);
+    });
 });
 
 describe('spies', () => {
