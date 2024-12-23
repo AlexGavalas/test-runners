@@ -1,7 +1,7 @@
 import type { Config } from 'jest';
 
 const config: Config = {
-    testEnvironment: 'jsdom',
+    testEnvironment: 'jest-fixed-jsdom',
 
     testEnvironmentOptions: {
         customExportConditions: [''],
@@ -9,7 +9,6 @@ const config: Config = {
 
     preset: 'ts-jest',
 
-    setupFiles: ['<rootDir>/helpers/jest.polyfills.ts'],
     setupFilesAfterEnv: ['<rootDir>/helpers/msw.ts'],
 };
 
