@@ -1,5 +1,4 @@
 import { basename, dirname, extname, join } from 'node:path';
-// @ts-expect-error
 import { describe, it, afterEach, before, snapshot, mock } from 'node:test';
 import assert from 'node:assert';
 import { cleanup, render, screen } from '@testing-library/react';
@@ -73,13 +72,16 @@ describe('<App />', () => {
         // We can assert on the button's text content
         assert.equal(button.textContent, 'Count is: 0');
 
-        // @ts-expect-error
         // Or take a snapshot
         t.assert.snapshot(container);
     });
 });
 
-function generateSnapshotPath(testFilePath: string) {
+function generateSnapshotPath(testFilePath?: string) {
+    if (!testFilePath) {
+        return '';
+    }
+
     const ext = extname(testFilePath);
     const filename = basename(testFilePath, ext);
     const base = dirname(testFilePath);

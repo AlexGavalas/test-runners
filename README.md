@@ -6,20 +6,23 @@ This is a playground to check out various testing libraries. The following are s
 2. [UVU](https://github.com/lukeed/uvu)
 3. [Mocha](https://github.com/mochajs/mocha)
 4. [Jasmine](https://github.com/jasmine/jasmine)
-5. [Jest](https://github.com/facebook/jest)
+5. [Jest](https://github.com/jestjs/jest)
 6. [Vitest](https://github.com/vitest-dev/vitest)
-7. [Node Test Runner](https://nodejs.org/docs/latest-v18.x/api/test.html)
+7. [Node Test Runner](https://nodejs.org/docs/latest-v22.x/api/test.html)
 8. [XV](https://github.com/typicode/xv)
 9. [Unexpected](https://github.com/unexpectedjs/unexpected)
-10. [Tape](https://github.com/ljharb/tape)
-11. [Node Tap](https://github.com/tapjs/node-tap)
+10. [Tape](https://github.com/tape-testing/tape)
+11. [Tap](https://github.com/tapjs/tapjs)
 12. [Japa](https://github.com/japa/runner)
+13. [Poku](https://github.com/wellwelwel/poku)
+14. [QUnit](https://github.com/qunitjs/qunit)
+15. [Reassure](https://github.com/callstack/reassure)
+16. [Sinon](https://github.com/sinonjs/sinon)
 
 ## Project config
 
 Some helper libraries present are:
 
 -   [tsx](https://github.com/privatenumber/tsx): A Typescript Module Loader.
--   [ts-node](https://github.com/TypeStrong/ts-node): A Typescript execution engine for Node.
 -   [@testing-library/react](https://github.com/testing-library/react-testing-library): A library to test React components.
 -   [jsdom](https://github.com/jsdom/jsdom): A Javascript implementation of various web standards.
