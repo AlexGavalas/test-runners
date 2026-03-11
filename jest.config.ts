@@ -1,14 +1,13 @@
+import { createJsWithTsEsmPreset } from 'ts-jest';
 import type { Config } from 'jest';
 
 const config: Config = {
+    ...createJsWithTsEsmPreset(),
     testEnvironment: 'jest-fixed-jsdom',
-
     testEnvironmentOptions: {
         customExportConditions: [''],
     },
-
-    preset: 'ts-jest',
-
+    transformIgnorePatterns: ['/node_modules/(?!(\\.pnpm/)?(msw|until-async))'],
     setupFilesAfterEnv: ['<rootDir>/helpers/msw.ts'],
 };
 
