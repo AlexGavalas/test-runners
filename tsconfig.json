@@ -8,12 +8,12 @@
         "strict": true,
         "forceConsistentCasingInFileNames": true,
         "module": "ESNext",
-        "moduleResolution": "Node",
+        "moduleResolution": "bundler",
         "resolveJsonModule": true,
         "isolatedModules": true,
         "noEmit": true,
         "jsx": "react-jsx",
-        "typeRoots": ["node_modules/@types", "./types"]
+        "typeRoots": ["node_modules/@types", "./types"],
     },
-    "references": [{ "path": "./tsconfig.node.json" }]
+    "references": [{ "path": "./tsconfig.node.json" }],
 }

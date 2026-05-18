@@ -2,7 +2,11 @@ import { createJsWithTsEsmPreset } from 'ts-jest';
 import type { Config } from 'jest';
 
 const config: Config = {
-    ...createJsWithTsEsmPreset(),
+    ...createJsWithTsEsmPreset({
+        diagnostics: {
+            ignoreCodes: [5107],
+        },
+    }),
     testEnvironment: 'jest-fixed-jsdom',
     testEnvironmentOptions: {
         customExportConditions: [''],

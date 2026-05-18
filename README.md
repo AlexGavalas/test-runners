@@ -16,8 +16,7 @@ This is a playground to check out various testing libraries. The following are s
 12. [Japa](https://github.com/japa/runner)
 13. [Poku](https://github.com/wellwelwel/poku)
 14. [QUnit](https://github.com/qunitjs/qunit)
-15. [Reassure](https://github.com/callstack/reassure)
-16. [Sinon](https://github.com/sinonjs/sinon)
+15. [Sinon](https://github.com/sinonjs/sinon)
 
 ## Project config
 
