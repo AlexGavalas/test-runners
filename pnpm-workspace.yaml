@@ -1,4 +1,10 @@
-onlyBuiltDependencies:
-  - esbuild
-  - msw
-  - unrs-resolver
+savePrefix: ''
+engineStrict: true
+ignoreScripts: true
+sideEffectsCache: false
+strictPeerDependencies: false
+minimumReleaseAge: 4320
+allowBuilds:
+    esbuild: true
+    msw: true
+    unrs-resolver: true
